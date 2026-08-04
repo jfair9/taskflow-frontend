@@ -28,7 +28,7 @@ jobs:
     vars: inherit
     secrets: inherit
     with:
-      manifest: ${{ inputs.version }}
+      version: ${{ inputs.version }}
       environment: ${{ job.environment }}
   Approve:
     needs: DEV
@@ -48,7 +48,7 @@ jobs:
     vars: inherit
     secrets: inherit
     with:
-      manifest: ${{ inputs.version }}
+      version: ${{ inputs.version }}
       environment: ${{ job.environment }}
   PROD:
     needs: STAGING
@@ -57,7 +57,7 @@ jobs:
     vars: inherit
     secrets: inherit
     with:
-      manifest: ${{ inputs.version }}
+      version: ${{ inputs.version }}
       environment: ${{ job.environment }}
   zxczx:
     needs:
