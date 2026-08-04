@@ -15,7 +15,6 @@ on:
 jobs:
 
   taskflow-frontend:
-    if: ${{ fromJSON(inputs.manifest)['taskflow-frontend']['docker.io/mock/frontend'].deploy }}
     uses: jfair9/taskflow-frontend/.cloudbees/workflows/deploy.yaml
     vars: inherit
     secrets: inherit
