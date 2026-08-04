@@ -8,7 +8,7 @@ on:
       environment:
         type: string
         required: true
-      manifest:
+      version:
         type: string
         required: true
 
@@ -19,5 +19,5 @@ jobs:
     vars: inherit
     secrets: inherit
     with:
-      version: ${{ fromJSON(inputs.manifest)['taskflow-frontend']['docker.io/mock/frontend'].version }}
+      version: ${{ inputs.version }}
       environment: ${{ inputs.environment }}
