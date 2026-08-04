@@ -26,15 +26,3 @@ jobs:
           npm install
           npm run build
 
-      - name: Register build artifact
-        uses: cloudbees-io/register-build-artifacts@main
-        with:
-          artifact-metadata: |
-            [
-              {
-                "name": "docker.io/mock/frontend",
-                "version": "${{ cloudbees.version }}",
-                "url": "docker.io/mock/frontend:${{ cloudbees.version }}",
-                "type": "docker"
-              }
-            ]
