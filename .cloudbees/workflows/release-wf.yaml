@@ -4,7 +4,7 @@ name: Release WF
 on:
   workflow_dispatch:
     inputs:
-      manifest:
+      version:
         type: string
         required: true
         description: System-generated manifest for releases
@@ -28,7 +28,7 @@ jobs:
     vars: inherit
     secrets: inherit
     with:
-      manifest: ${{ inputs.manifest }}
+      manifest: ${{ inputs.version }}
       environment: ${{ job.environment }}
   Approve:
     needs: DEV
@@ -48,7 +48,7 @@ jobs:
     vars: inherit
     secrets: inherit
     with:
-      manifest: ${{ inputs.manifest }}
+      manifest: ${{ inputs.version }}
       environment: ${{ job.environment }}
   PROD:
     needs: STAGING
@@ -57,7 +57,7 @@ jobs:
     vars: inherit
     secrets: inherit
     with:
-      manifest: ${{ inputs.manifest }}
+      manifest: ${{ inputs.version }}
       environment: ${{ job.environment }}
   zxczx:
     needs:
