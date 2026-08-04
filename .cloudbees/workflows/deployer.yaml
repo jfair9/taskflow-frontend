@@ -19,6 +19,5 @@ jobs:
     vars: inherit
     secrets: inherit
     with:
-      artifact-id: ${{ fromJSON(inputs.manifest)['taskflow-frontend']['docker.io/mock/frontend'].id }}
       version: ${{ fromJSON(inputs.manifest)['taskflow-frontend']['docker.io/mock/frontend'].version }}
       environment: ${{ inputs.environment }}
